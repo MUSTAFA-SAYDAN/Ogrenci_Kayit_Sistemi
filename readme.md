@@ -1,31 +1,17 @@
-🎓 Flask Öğrenci Kayıt Sistemi (JWT Kimlik Doğrulamalı)
-Kullanıcıların güvenli şekilde kayıt olup giriş yaptığı ve JWT token ile korunan bir öğrenci yönetim API’si. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT ile geliştirilmiştir.
+# 🎓 Flask Öğrenci Kayıt Sistemi (JWT ile)
 
-⚡️ Öne Çıkanlar
-✅ Kullanıcı kayıt & giriş
+---
 
-🔐 JWT tabanlı kimlik doğrulama
+## 🚀 Kurulum
 
-📝 Öğrenci CRUD işlemleri
-
-💾 SQLite veritabanı
-
-🚀 Basit, hızlı ve genişletilebilir yapı
-
-📥 Kurulum
-bash
-Kopyala
-Düzenle
+```bash
 git clone https://github.com/kullaniciadi/Ogrenci_Kayit_Sistemi.git
 cd Ogrenci_Kayit_Sistemi
 python -m venv venv
 venv\Scripts\activate       # Windows için
 pip install -r requirements.txt
 python app.py
-Uygulama http://localhost:5001 adresinde çalışır.
-
-🔐 Kullanıcı İşlemleri
-Kayıt Ol
+🔐 Kullanıcı Kayıt
 http
 Kopyala
 Düzenle
@@ -36,7 +22,7 @@ Content-Type: application/json
   "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
-Giriş Yap
+🔑 Giriş Yap
 http
 Kopyala
 Düzenle
@@ -47,7 +33,7 @@ Content-Type: application/json
   "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
-Başarılı girişte JWT token döner:
+Başarılı girişte dönen token örneği:
 
 json
 Kopyala
@@ -55,14 +41,14 @@ Düzenle
 {
   "token": "eyJhbGc..."
 }
-📚 Öğrenci İşlemleri (Token Gereklidir)
-Tüm isteklerde header'a ekleyin:
+📚 Öğrenci İşlemleri (Token Gerekli)
+Her istekte header’a ekleyin:
 
 makefile
 Kopyala
 Düzenle
 Authorization: Bearer <JWT_TOKEN>
-Öğrenci Ekle
+➕ Öğrenci Ekle
 http
 Kopyala
 Düzenle
@@ -72,22 +58,22 @@ Authorization: Bearer <JWT_TOKEN>
 
 {
   "isim": "Mustafa",
-  "soyisim": "Saydan",
+  "soyisim": "SAYDAN",
   "numara": 123456
 }
-Öğrencileri Listele
+👀 Öğrenci Listesi Getir
 http
 Kopyala
 Düzenle
 GET /ogrenciler
 Authorization: Bearer <JWT_TOKEN>
-Öğrenci Detayı
+🔎 Öğrenci Detayı
 http
 Kopyala
 Düzenle
 GET /ogrenciler/{id}
 Authorization: Bearer <JWT_TOKEN>
-Öğrenci Güncelle
+✏️ Öğrenci Güncelle
 http
 Kopyala
 Düzenle
@@ -98,13 +84,13 @@ Authorization: Bearer <JWT_TOKEN>
 {
   "isim": "Mustafa"
 }
-Öğrenci Sil
+🗑️ Öğrenci Sil
 http
 Kopyala
 Düzenle
 DELETE /ogrenciler/{id}
 Authorization: Bearer <JWT_TOKEN>
-⚙️ Teknolojiler
+🛠 Kullanılan Teknolojiler
 Python 3.x
 
 Flask
@@ -119,7 +105,7 @@ SQLite
 
 👨‍💻 Geliştirici
 Mustafa
-GitHub: github.com/MUSTAFA-SAYDAN
+GitHub: github.com/kullaniciadi
 
 📄 Lisans
-MIT Lisansı 2025
+MIT Lisansı
