@@ -1,7 +1,7 @@
-🎓 Flask Öğrenci Kayıt Sistemi (JWT ile)
+#🎓 Flask Öğrenci Kayıt Sistemi (JWT ile)
 Bu proje, kullanıcıların kayıt olup giriş yapabildiği ve JWT token ile korunan basit bir öğrenci yönetim API’sidir. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT kullanılarak geliştirilmiştir.
 
-✨ Özellikler
+#✨ Özellikler
 👤 Kullanıcı kayıt ve giriş sistemi
 
 🔐 JWT ile güvenli kimlik doğrulama
@@ -12,7 +12,7 @@ Bu proje, kullanıcıların kayıt olup giriş yapabildiği ve JWT token ile kor
 
 🔒 Token korumalı API uç noktaları
 
-⚙️ Kurulum
+#⚙️ Kurulum
 Projeyi klonlayın veya indirin.
 
 Komut satırında proje klasörüne gidin:
@@ -50,7 +50,7 @@ json
 Kopyala
 Düzenle
 {
-  "kullanici_adi": "ahmet",
+  "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
 🔑 Giriş Yapma
@@ -60,7 +60,7 @@ json
 Kopyala
 Düzenle
 {
-  "kullanici_adi": "ahmet",
+  "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
 Başarılı girişte 🎫 JWT token döner. Bu token diğer API çağrılarında kullanılacaktır.
@@ -79,8 +79,8 @@ json
 Kopyala
 Düzenle
 {
-  "isim": "Mehmet",
-  "soyisim": "Demir",
+  "isim": "Mustafa",
+  "soyisim": "Saydan",
   "numara": 123456
 }
 🔎 Belirli Öğrenciyi Getir:
@@ -94,12 +94,12 @@ json
 Kopyala
 Düzenle
 {
-  "isim": "Ahmet"
+  "isim": "Mustafa"
 }
 🗑️ Öğrenci Sil:
 DELETE /ogrenciler/<id>
 
-🛠️ Kullanılan Teknolojiler
+#🛠️ Kullanılan Teknolojiler
 🐍 Python 3.x
 
 🌶 Flask
