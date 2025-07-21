@@ -11,7 +11,7 @@ python -m venv venv
 venv\Scripts\activate       # Windows için
 pip install -r requirements.txt
 python app.py
-🔐 Kullanıcı Kayıt
+**## 🔐 Kullanıcı Kayıt**
 http
 Kopyala
 Düzenle
