@@ -1,21 +1,18 @@
-__#🎓 Flask Öğrenci Kayıt Sistemi (JWT Kimlik Doğrulamalı)__
+# 🎓 Flask Öğrenci Kayıt Sistemi (JWT Kimlik Doğrulamalı)
+
 Kullanıcıların güvenli şekilde kayıt olup giriş yaptığı ve JWT token ile korunan bir öğrenci yönetim API’si. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT ile geliştirilmiştir.
 
-__##⚡️ Öne Çıkanlar__
-✅ Kullanıcı kayıt & giriş
+## ⚡️ Öne Çıkanlar
 
-🔐 JWT tabanlı kimlik doğrulama
+- ✅ Kullanıcı kayıt & giriş  
+- 🔐 JWT tabanlı kimlik doğrulama  
+- 📝 Öğrenci CRUD işlemleri  
+- 💾 SQLite veritabanı  
+- 🚀 Basit, hızlı ve genişletilebilir yapı
 
-📝 Öğrenci CRUD işlemleri
+## 📥 Kurulum
 
-💾 SQLite veritabanı
-
-🚀 Basit, hızlı ve genişletilebilir yapı
-
-__##📥 Kurulum__
-bash
-Kopyala
-Düzenle
+```bash
 git clone https://github.com/kullaniciadi/Ogrenci_Kayit_Sistemi.git
 cd Ogrenci_Kayit_Sistemi
 python -m venv venv
@@ -33,7 +30,7 @@ POST /kayit
 Content-Type: application/json
 
 {
-  "kullanici_adi": "ahmet",
+  "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
 Giriş Yap
@@ -44,7 +41,7 @@ POST /giris
 Content-Type: application/json
 
 {
-  "kullanici_adi": "ahmet",
+  "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
 Başarılı girişte JWT token döner:
@@ -71,8 +68,8 @@ Content-Type: application/json
 Authorization: Bearer <JWT_TOKEN>
 
 {
-  "isim": "Mehmet",
-  "soyisim": "Demir",
+  "isim": "Mustafa",
+  "soyisim": "SAYDAN",
   "numara": 123456
 }
 Öğrencileri Listele
@@ -119,7 +116,7 @@ SQLite
 
 👨‍💻 Geliştirici
 Mustafa
-GitHub: github.com/kullaniciadi
+GitHub: github.com/MUSTAFA-SAYDAN 
 
 📄 Lisans
 MIT Lisansı
