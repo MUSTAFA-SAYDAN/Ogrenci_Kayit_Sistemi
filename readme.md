@@ -1,19 +1,31 @@
-# 🎓 Flask Öğrenci Kayıt Sistemi (JWT ile)
+__#🎓 Flask Öğrenci Kayıt Sistemi (JWT Kimlik Doğrulamalı)__
+Kullanıcıların güvenli şekilde kayıt olup giriş yaptığı ve JWT token ile korunan bir öğrenci yönetim API’si. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT ile geliştirilmiştir.
 
----
+__##⚡️ Öne Çıkanlar__
+✅ Kullanıcı kayıt & giriş
 
-## 🚀 Kurulum
+🔐 JWT tabanlı kimlik doğrulama
 
-```bash
+📝 Öğrenci CRUD işlemleri
+
+💾 SQLite veritabanı
+
+🚀 Basit, hızlı ve genişletilebilir yapı
+
+__##📥 Kurulum__
+bash
+Kopyala
+Düzenle
 git clone https://github.com/kullaniciadi/Ogrenci_Kayit_Sistemi.git
 cd Ogrenci_Kayit_Sistemi
 python -m venv venv
 venv\Scripts\activate       # Windows için
 pip install -r requirements.txt
 python app.py
-```
-```
-🔐 Kullanıcı Kayıt
+Uygulama http://localhost:5001 adresinde çalışır.
+
+🔐 Kullanıcı İşlemleri
+Kayıt Ol
 http
 Kopyala
 Düzenle
@@ -21,11 +33,10 @@ POST /kayit
 Content-Type: application/json
 
 {
-  "kullanici_adi": "Mustafa",
+  "kullanici_adi": "ahmet",
   "sifre": "1234"
 }
-```
-🔑 Giriş Yap
+Giriş Yap
 http
 Kopyala
 Düzenle
@@ -33,10 +44,10 @@ POST /giris
 Content-Type: application/json
 
 {
-  "kullanici_adi": "Mustafa",
+  "kullanici_adi": "ahmet",
   "sifre": "1234"
 }
-Başarılı girişte dönen token örneği:
+Başarılı girişte JWT token döner:
 
 json
 Kopyala
@@ -44,14 +55,14 @@ Düzenle
 {
   "token": "eyJhbGc..."
 }
-📚 Öğrenci İşlemleri (Token Gerekli)
-Her istekte header’a ekleyin:
+📚 Öğrenci İşlemleri (Token Gereklidir)
+Tüm isteklerde header'a ekleyin:
 
 makefile
 Kopyala
 Düzenle
 Authorization: Bearer <JWT_TOKEN>
-➕ Öğrenci Ekle
+Öğrenci Ekle
 http
 Kopyala
 Düzenle
@@ -60,23 +71,23 @@ Content-Type: application/json
 Authorization: Bearer <JWT_TOKEN>
 
 {
-  "isim": "Mustafa",
-  "soyisim": "SAYDAN",
+  "isim": "Mehmet",
+  "soyisim": "Demir",
   "numara": 123456
 }
-👀 Öğrenci Listesi Getir
+Öğrencileri Listele
 http
 Kopyala
 Düzenle
 GET /ogrenciler
 Authorization: Bearer <JWT_TOKEN>
-🔎 Öğrenci Detayı
+Öğrenci Detayı
 http
 Kopyala
 Düzenle
 GET /ogrenciler/{id}
 Authorization: Bearer <JWT_TOKEN>
-✏️ Öğrenci Güncelle
+Öğrenci Güncelle
 http
 Kopyala
 Düzenle
@@ -85,15 +96,15 @@ Content-Type: application/json
 Authorization: Bearer <JWT_TOKEN>
 
 {
-  "isim": "Mustafa"
+  "isim": "Ahmet"
 }
-🗑️ Öğrenci Sil
+Öğrenci Sil
 http
 Kopyala
 Düzenle
 DELETE /ogrenciler/{id}
 Authorization: Bearer <JWT_TOKEN>
-🛠 Kullanılan Teknolojiler
+⚙️ Teknolojiler
 Python 3.x
 
 Flask
@@ -108,7 +119,7 @@ SQLite
 
 👨‍💻 Geliştirici
 Mustafa
-GitHub: github.com/MUSTAFA-SAYDAN
+GitHub: github.com/kullaniciadi
 
 📄 Lisans
 MIT Lisansı
