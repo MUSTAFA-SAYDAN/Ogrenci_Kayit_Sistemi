@@ -11,7 +11,8 @@ python -m venv venv
 venv\Scripts\activate       # Windows için
 pip install -r requirements.txt
 python app.py
-**## 🔐 Kullanıcı Kayıt**
+```
+🔐 Kullanıcı Kayıt
 http
 Kopyala
 Düzenle
@@ -22,6 +23,7 @@ Content-Type: application/json
   "kullanici_adi": "Mustafa",
   "sifre": "1234"
 }
+```
 🔑 Giriş Yap
 http
 Kopyala
