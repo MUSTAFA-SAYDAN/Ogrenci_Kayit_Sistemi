@@ -105,7 +105,7 @@ SQLite
 
 👨‍💻 Geliştirici
 Mustafa
-GitHub: github.com/kullaniciadi
+GitHub: github.com/MUSTAFA-SAYDAN
 
 📄 Lisans
 MIT Lisansı
