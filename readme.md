@@ -1,121 +1,125 @@
-##🎓 Flask Öğrenci Kayıt Sistemi (JWT ile)
+🎓 Flask Öğrenci Kayıt Sistemi (JWT Kimlik Doğrulamalı)
+Kullanıcıların güvenli şekilde kayıt olup giriş yaptığı ve JWT token ile korunan bir öğrenci yönetim API’si. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT ile geliştirilmiştir.
 
-Bu proje, kullanıcıların kayıt olup giriş yapabildiği ve JWT token ile korunan basit bir öğrenci yönetim API’sidir. Flask, SQLAlchemy, Flask-Bcrypt ve PyJWT kullanılarak geliştirilmiştir.
+⚡️ Öne Çıkanlar
+✅ Kullanıcı kayıt & giriş
 
-#✨ Özellikler
-👤 Kullanıcı kayıt ve giriş sistemi
+🔐 JWT tabanlı kimlik doğrulama
 
-🔐 JWT ile güvenli kimlik doğrulama
-
-📝 Öğrenci ekleme, listeleme, güncelleme ve silme
+📝 Öğrenci CRUD işlemleri
 
 💾 SQLite veritabanı
 
-🔒 Token korumalı API uç noktaları
+🚀 Basit, hızlı ve genişletilebilir yapı
 
-#⚙️ Kurulum
-Projeyi klonlayın veya indirin.
-
-Komut satırında proje klasörüne gidin:
-
+📥 Kurulum
 bash
 Kopyala
 Düzenle
+git clone https://github.com/kullaniciadi/Ogrenci_Kayit_Sistemi.git
 cd Ogrenci_Kayit_Sistemi
-Sanal ortam oluşturun ve aktif edin:
-
-css
-Kopyala
-Düzenle
 python -m venv venv
-venv\Scripts\activate  (Windows için)
-Gerekli kütüphaneleri yükleyin:
-
-nginx
-Kopyala
-Düzenle
+venv\Scripts\activate       # Windows için
 pip install -r requirements.txt
-Uygulamayı başlatın:
-
-nginx
-Kopyala
-Düzenle
 python app.py
-Uygulama 👉 http://localhost:5001 adresinde çalışacaktır.
+Uygulama http://localhost:5001 adresinde çalışır.
 
-🚀 API Kullanımı
-🆕 Kayıt Olma
-POST /kayit endpoint'ine aşağıdaki JSON verisi gönderilir:
+🔐 Kullanıcı İşlemleri
+Kayıt Ol
+http
+Kopyala
+Düzenle
+POST /kayit
+Content-Type: application/json
+
+{
+  "kullanici_adi": "Mustafa",
+  "sifre": "1234"
+}
+Giriş Yap
+http
+Kopyala
+Düzenle
+POST /giris
+Content-Type: application/json
+
+{
+  "kullanici_adi": "Mustafa",
+  "sifre": "1234"
+}
+Başarılı girişte JWT token döner:
 
 json
 Kopyala
 Düzenle
 {
-  "kullanici_adi": "Mustafa",
-  "sifre": "1234"
+  "token": "eyJhbGc..."
 }
-🔑 Giriş Yapma
-POST /giris endpoint'ine aşağıdaki JSON verisi gönderilir:
+📚 Öğrenci İşlemleri (Token Gereklidir)
+Tüm isteklerde header'a ekleyin:
 
-json
+makefile
 Kopyala
 Düzenle
-{
-  "kullanici_adi": "Mustafa",
-  "sifre": "1234"
-}
-Başarılı girişte 🎫 JWT token döner. Bu token diğer API çağrılarında kullanılacaktır.
-
-📚 Öğrenci İşlemleri
-Aşağıdaki işlemler için her isteğin başlığında Authorization: Bearer <TOKEN> eklenmelidir.
-
-👀 Öğrenci Listele:
-GET /ogrenciler
-
-➕ Öğrenci Ekle:
+Authorization: Bearer <JWT_TOKEN>
+Öğrenci Ekle
+http
+Kopyala
+Düzenle
 POST /ogrenciler
-Gövde örneği:
+Content-Type: application/json
+Authorization: Bearer <JWT_TOKEN>
 
-json
-Kopyala
-Düzenle
 {
   "isim": "Mustafa",
   "soyisim": "Saydan",
   "numara": 123456
 }
-🔎 Belirli Öğrenciyi Getir:
-GET /ogrenciler/<id>
-
-✏️ Öğrenci Güncelle:
-PUT /ogrenciler/<id>
-Gövde örneği (güncellenecek alanlar):
-
-json
+Öğrencileri Listele
+http
 Kopyala
 Düzenle
+GET /ogrenciler
+Authorization: Bearer <JWT_TOKEN>
+Öğrenci Detayı
+http
+Kopyala
+Düzenle
+GET /ogrenciler/{id}
+Authorization: Bearer <JWT_TOKEN>
+Öğrenci Güncelle
+http
+Kopyala
+Düzenle
+PUT /ogrenciler/{id}
+Content-Type: application/json
+Authorization: Bearer <JWT_TOKEN>
+
 {
   "isim": "Mustafa"
 }
-🗑️ Öğrenci Sil:
-DELETE /ogrenciler/<id>
+Öğrenci Sil
+http
+Kopyala
+Düzenle
+DELETE /ogrenciler/{id}
+Authorization: Bearer <JWT_TOKEN>
+⚙️ Teknolojiler
+Python 3.x
 
-#🛠️ Kullanılan Teknolojiler
-🐍 Python 3.x
+Flask
 
-🌶 Flask
+Flask SQLAlchemy
 
-🐘 Flask SQLAlchemy
+Flask Bcrypt
 
-🔐 Flask Bcrypt
+PyJWT
 
-🔑 PyJWT
-
-🗄 SQLite
+SQLite
 
 👨‍💻 Geliştirici
 Mustafa
-GitHub: github.com/kullaniciadi
+GitHub: github.com/MUSTAFA-SAYDAN
 
 📄 Lisans
-MIT Lisansı altında lisanslanmıştır.
+MIT Lisansı 2025
